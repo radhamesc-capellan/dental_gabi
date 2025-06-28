@@ -5,7 +5,9 @@ html {
 }
 
 body {
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* Animaciones de entrada */
@@ -82,38 +84,37 @@ body {
 }
 
 .animate-slide-in-top {
-  animation: slideInFromTop 0.6s ease-out forwards;
+  animation: slideInTop 0.6s ease-out;
+}
+
+@keyframes slideInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Efectos hover mejorados */
 .hover-lift {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hover-lift:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Efecto de brillo en hover */
 .hover-glow {
-  position: relative;
-  overflow: hidden;
+  transition: box-shadow 0.3s ease;
 }
 
-.hover-glow::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  transition: left 0.5s;
-}
-
-.hover-glow:hover::before {
-  left: 100%;
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
 }
 
 /* Efecto de pulso para botones */
@@ -133,8 +134,8 @@ body {
 /* Efecto de scroll reveal */
 .scroll-reveal {
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease-out;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
 }
 
 .scroll-reveal.revealed {
@@ -171,9 +172,8 @@ body {
 
 /* Efecto de loading spinner */
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .spinner {
@@ -248,15 +248,19 @@ body {
 
 /* Efecto de glassmorphism */
 .glass {
-  background: rgba(255, 255, 255, 0.25);
+  background: var(--glass-bg);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
 }
 
 /* Efecto de neumorphism */
 .neumorphism {
-  background: #e0e5ec;
-  box-shadow: 9px 9px 16px #a3b1c6, -9px -9px 16px #ffffff;
+  background: #ffffff;
+  box-shadow: 
+    8px 8px 16px rgba(0, 0, 0, 0.1),
+    -8px -8px 16px rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
 }
 
 .neumorphism-inset {
@@ -283,7 +287,6 @@ body {
 .focus-ring:focus {
   outline: 2px solid #06b6d4;
   outline-offset: 2px;
-  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
 }
 
 /* Efecto de loading skeleton */
@@ -304,19 +307,26 @@ body {
 
 /* Efecto de ripple para botones */
 .ripple {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.6);
-  transform: scale(0);
-  animation: ripple-animation 0.6s linear;
-  pointer-events: none;
+  position: relative;
+  overflow: hidden;
 }
 
-@keyframes ripple-animation {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
+.ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.ripple:active::after {
+  width: 300px;
+  height: 300px;
 }
 
 /* Efecto de scroll progress */
@@ -324,11 +334,11 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 0%;
   height: 3px;
   background: linear-gradient(90deg, #06b6d4, #0891b2);
   z-index: 9999;
-  transform-origin: left;
+  transition: width 0.1s ease;
 }
 
 /* Efecto de imagen reveal */
@@ -365,7 +375,7 @@ body.loaded {
 
 body {
   opacity: 0;
-  transition: opacity 0.5s ease-in;
+  transition: opacity 0.3s ease;
 }
 
 /* Efecto de hover para tarjetas con sombra dinámica */
@@ -532,4 +542,125 @@ body {
 .reveal-from-bottom.revealed {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Estilos globales para el consultorio odontológico */
+
+/* Variables CSS personalizadas */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Estilos base */
+* {
+  box-sizing: border-box;
+}
+
+/* Efectos de entrada para elementos del menú */
+#mobile-menu nav ul li {
+  opacity: 0;
+  transform: translateX(20px);
+  animation: slideInRight 0.3s ease forwards;
+}
+
+#mobile-menu nav ul li:nth-child(1) { animation-delay: 0.1s; }
+#mobile-menu nav ul li:nth-child(2) { animation-delay: 0.2s; }
+#mobile-menu nav ul li:nth-child(3) { animation-delay: 0.3s; }
+#mobile-menu nav ul li:nth-child(4) { animation-delay: 0.4s; }
+#mobile-menu nav ul li:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Efecto de desenfoque para el overlay */
+#mobile-overlay {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Mejoras para el botón del menú */
+#mobile-menu-btn {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+#mobile-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+/* Efectos de hover mejorados para enlaces del menú */
+#mobile-menu a {
+  position: relative;
+  overflow: hidden;
+}
+
+#mobile-menu a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+#mobile-menu a:hover::before {
+  left: 100%;
+}
+
+/* Animación de carga del sitio */
+body.loaded {
+  opacity: 1;
+}
+
+body {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Estilos para modo oscuro (si se implementa en el futuro) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --glass-bg: rgba(0, 0, 0, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Mejoras para dispositivos móviles */
+@media (max-width: 640px) {
+  #mobile-menu {
+    width: 100vw;
+    max-width: 100vw;
+  }
+  
+  #mobile-menu .h-full {
+    height: 100vh;
+  }
+}
+
+/* Efecto de stagger animate */
+.stagger-animate {
+  animation-delay: calc(var(--stagger-index, 0) * 0.1s);
+}
+
+/* Contador animado */
+.counter {
+  transition: all 0.3s ease;
 }

@@ -391,30 +391,57 @@ window.addEventListener('load', () => {
   document.body.classList.add('loaded');
 });
 
-// Menú móvil
+// Menú móvil glassmorphism
 document.addEventListener('DOMContentLoaded', function() {
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileCloseBtn = document.getElementById('mobile-close-btn');
   const mobileMenu = document.getElementById('mobile-menu');
+  const mobileOverlay = document.getElementById('mobile-overlay');
   
-  if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', function() {
-      mobileMenu.classList.toggle('hidden');
-      // Cambiar el ícono del botón
-      const svg = mobileMenuBtn.querySelector('svg');
-      if (mobileMenu.classList.contains('hidden')) {
-        svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
-      } else {
-        svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+  function openMobileMenu() {
+    mobileMenu.classList.remove('translate-x-full');
+    mobileMenu.classList.add('translate-x-0');
+    mobileOverlay.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    
+    // Animación del overlay
+    setTimeout(() => {
+      mobileOverlay.classList.add('bg-black/20');
+    }, 10);
+  }
+  
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('translate-x-0');
+    mobileMenu.classList.add('translate-x-full');
+    mobileOverlay.classList.add('hidden');
+    mobileOverlay.classList.remove('bg-black/20');
+    document.body.style.overflow = '';
+  }
+  
+  if (mobileMenuBtn && mobileMenu && mobileOverlay) {
+    // Abrir menú
+    mobileMenuBtn.addEventListener('click', openMobileMenu);
+    
+    // Cerrar menú con botón X
+    if (mobileCloseBtn) {
+      mobileCloseBtn.addEventListener('click', closeMobileMenu);
+    }
+    
+    // Cerrar menú con overlay
+    mobileOverlay.addEventListener('click', closeMobileMenu);
+    
+    // Cerrar menú con Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('translate-x-full')) {
+        closeMobileMenu();
       }
     });
     
     // Cerrar menú al hacer clic en un enlace
-    const mobileLinks = mobileMenu.querySelectorAll('a');
+    const mobileLinks = mobileMenu.querySelectorAll('a[href^="/"]');
     mobileLinks.forEach(link => {
       link.addEventListener('click', function() {
-        mobileMenu.classList.add('hidden');
-        const svg = mobileMenuBtn.querySelector('svg');
-        svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+        closeMobileMenu();
       });
     });
   }
