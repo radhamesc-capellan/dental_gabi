@@ -1,0 +1,80 @@
+---
+// Layout base para el consultorio odontológico
+import '../styles/global.css';
+---
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>OdontoLima - Consultorio Odontológico en Lima, Perú</title>
+    <meta name="description" content="Consultorio odontológico en Lima con atención personalizada, tecnología avanzada y precios justos. Especialistas en estética dental, ortodoncia y odontología general." />
+  </head>
+  <body class="bg-gradient-to-br from-blue-50 to-cyan-100 min-h-screen text-gray-800 font-sans">
+    <header class="bg-white/80 backdrop-blur shadow-md sticky top-0 z-50">
+      <nav class="container mx-auto flex items-center justify-between py-4 px-4">
+        <div class="flex items-center gap-2">
+          <img src="/favicon.svg" alt="Logo" class="w-8 h-8" />
+          <span class="text-xl font-bold text-cyan-700">OdontoLima</span>
+        </div>
+        <ul class="hidden md:flex gap-6 text-base font-medium">
+          <li><a href="/" class="hover:text-cyan-700 transition">Inicio</a></li>
+          <li><a href="/nosotros" class="hover:text-cyan-700 transition">Nosotros</a></li>
+          <li><a href="/servicios" class="hover:text-cyan-700 transition">Servicios</a></li>
+          <li><a href="/equipo" class="hover:text-cyan-700 transition">Equipo</a></li>
+          <li><a href="/contacto" class="hover:text-cyan-700 transition">Contacto</a></li>
+        </ul>
+        <div class="md:hidden">
+          <button class="text-cyan-700 hover:text-cyan-800">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="bg-cyan-700 text-white py-8 mt-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-lg font-semibold mb-4">OdontoLima</h3>
+            <p class="text-sm text-cyan-100">Tu sonrisa, nuestra pasión. Consultorio odontológico comprometido con tu salud bucal.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Servicios</h4>
+            <ul class="text-sm text-cyan-100 space-y-2">
+              <li><a href="/servicios" class="hover:text-white">Odontología General</a></li>
+              <li><a href="/servicios" class="hover:text-white">Estética Dental</a></li>
+              <li><a href="/servicios" class="hover:text-white">Ortodoncia</a></li>
+              <li><a href="/servicios" class="hover:text-white">Endodoncia</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Contacto</h4>
+            <ul class="text-sm text-cyan-100 space-y-2">
+              <li>Av. Arequipa 1234, Miraflores</li>
+              <li>Lima, Perú</li>
+              <li>Tel: (01) 234-5678</li>
+              <li>Email: contacto@odontolima.pe</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Horarios</h4>
+            <ul class="text-sm text-cyan-100 space-y-2">
+              <li>Lun - Vie: 8:00 AM - 8:00 PM</li>
+              <li>Sábados: 8:00 AM - 6:00 PM</li>
+              <li>Domingos: 9:00 AM - 2:00 PM</li>
+              <li>Emergencias: 24/7</li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-cyan-600 mt-8 pt-8 text-center text-sm text-cyan-100">
+          &copy; {new Date().getFullYear()} OdontoLima. Todos los derechos reservados. Lima, Perú.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html> 
