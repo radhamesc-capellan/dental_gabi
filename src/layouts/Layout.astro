@@ -262,43 +262,156 @@ const {
       <slot />
     </main>
     
-    <footer class="bg-cyan-700 text-white py-8 mt-12">
-      <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
-            <h3 class="text-lg font-semibold mb-4">RehabiDent</h3>
-            <p class="text-sm text-cyan-100">Tu sonrisa, nuestra pasión. Consultorio odontológico especializado en rehabilitación oral comprometido con tu salud bucal.</p>
+    <footer class="bg-gradient-to-br from-cyan-800 via-cyan-700 to-cyan-600 text-white py-12 mt-16 relative overflow-hidden">
+      <!-- Elementos decorativos de fondo -->
+      <div class="absolute inset-0 bg-black/5"></div>
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 via-cyan-300 to-cyan-400"></div>
+      
+      <div class="container mx-auto px-4 relative z-10">
+        <!-- Logo y descripción principal -->
+        <div class="text-center mb-12">
+          <div class="flex items-center justify-center gap-3 mb-6">
+            <img src="/RehabiDent_logo.png" alt="Logo RehabiDent" class="w-12 h-12 rounded-full shadow-lg" />
+            <h2 class="text-2xl font-bold text-white">
+              Rehabi<span class="text-cyan-200">Dent</span>
+            </h2>
           </div>
-          <div>
-            <h4 class="font-semibold mb-4">Servicios</h4>
-            <ul class="text-sm text-cyan-100 space-y-2">
-              <li><a href="/servicios" class="hover:text-white transition">Rehabilitación Oral</a></li>
-              <li><a href="/servicios" class="hover:text-white transition">Implantes Dentales</a></li>
-              <li><a href="/servicios" class="hover:text-white transition">Estética Dental</a></li>
-              <li><a href="/servicios" class="hover:text-white transition">Ortodoncia</a></li>
+          <p class="text-lg text-cyan-100 max-w-2xl mx-auto leading-relaxed">
+            Tu sonrisa, nuestra pasión. Consultorio odontológico especializado en rehabilitación oral 
+            comprometido con tu salud bucal y bienestar integral.
+          </p>
+        </div>
+
+        <!-- Contenido principal del footer -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <!-- Servicios -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover-lift">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="text-2xl">🦷</div>
+              <h4 class="font-bold text-lg text-white">Servicios</h4>
+            </div>
+            <ul class="space-y-3 text-cyan-100">
+              <li>
+                <a href="/servicios" class="flex items-center gap-2 hover:text-white transition-all duration-300 group">
+                  <span class="w-1 h-1 bg-cyan-300 rounded-full group-hover:bg-white transition-colors"></span>
+                  Rehabilitación Oral
+                </a>
+              </li>
+              <li>
+                <a href="/servicios" class="flex items-center gap-2 hover:text-white transition-all duration-300 group">
+                  <span class="w-1 h-1 bg-cyan-300 rounded-full group-hover:bg-white transition-colors"></span>
+                  Implantes Dentales
+                </a>
+              </li>
+              <li>
+                <a href="/servicios" class="flex items-center gap-2 hover:text-white transition-all duration-300 group">
+                  <span class="w-1 h-1 bg-cyan-300 rounded-full group-hover:bg-white transition-colors"></span>
+                  Estética Dental
+                </a>
+              </li>
+              <li>
+                <a href="/servicios" class="flex items-center gap-2 hover:text-white transition-all duration-300 group">
+                  <span class="w-1 h-1 bg-cyan-300 rounded-full group-hover:bg-white transition-colors"></span>
+                  Ortodoncia
+                </a>
+              </li>
             </ul>
           </div>
-          <div>
-            <h4 class="font-semibold mb-4">Contacto</h4>
-            <ul class="text-sm text-cyan-100 space-y-2">
-              <li>Av. Arequipa 1234, Miraflores</li>
-              <li>Lima, Perú</li>
-              <li>Tel: (01) 234-5678</li>
-              <li>Email: contacto@RehabiDent.pe</li>
+
+          <!-- Contacto -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover-lift">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="text-2xl">📍</div>
+              <h4 class="font-bold text-lg text-white">Contacto</h4>
+            </div>
+            <ul class="space-y-3 text-cyan-100">
+              <li class="flex items-start gap-3">
+                <span class="text-cyan-300 mt-1">📍</span>
+                <div>
+                  <p class="font-medium">Av. Campoy 1399, San Juan de Lurigancho</p>
+                  <p class="text-sm text-cyan-200">Lima, Perú</p>
+                </div>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="text-cyan-300">📞</span>
+                <a href="tel:+5112345678" class="hover:text-white transition-colors">+54 988 552 202</a>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="text-cyan-300">✉️</span>
+                <a href="mailto:contacto@RehabiDent.pe" class="hover:text-white transition-colors">contacto@RehabiDent.pe</a>
+              </li>
             </ul>
           </div>
-          <div>
-            <h4 class="font-semibold mb-4">Horarios</h4>
-            <ul class="text-sm text-cyan-100 space-y-2">
-              <li>Lun - Vie: 8:00 AM - 8:00 PM</li>
-              <li>Sábados: 8:00 AM - 6:00 PM</li>
-              <li>Domingos: 9:00 AM - 2:00 PM</li>
-              <li>Emergencias: 24/7</li>
+
+          <!-- Horarios -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover-lift">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="text-2xl">🕒</div>
+              <h4 class="font-bold text-lg text-white">Horarios</h4>
+            </div>
+            <ul class="space-y-3 text-cyan-100">
+              <li class="flex justify-between items-center">
+                <span>Lun - Vie:</span>
+                <span class="font-medium">8:00 AM - 8:00 PM</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <span>Sábados:</span>
+                <span class="font-medium">8:00 AM - 6:00 PM</span>
+              </li>
+              <li class="flex justify-between items-center">
+                <span>Domingos:</span>
+                <span class="font-medium">9:00 AM - 2:00 PM</span>
+              </li>
+              <li class="flex justify-between items-center text-cyan-300 font-semibold">
+                <span>Emergencias:</span>
+                <span>24/7</span>
+              </li>
             </ul>
+          </div>
+
+          <!-- Redes Sociales y CTA -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover-lift">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="text-2xl">💬</div>
+              <h4 class="font-bold text-lg text-white">Síguenos</h4>
+            </div>
+            <div class="space-y-4">
+              <p class="text-cyan-100 text-sm mb-4">
+                Mantente conectado con nosotros para consejos de salud dental y novedades.
+              </p>
+              <div class="flex gap-3">
+                <a href="#" class="w-10 h-10 bg-cyan-600 hover:bg-cyan-500 rounded-full flex items-center justify-center transition-all duration-300 hover-lift">
+                  <span class="text-lg">📘</span>
+                </a>
+                <a href="#" class="w-10 h-10 bg-cyan-600 hover:bg-cyan-500 rounded-full flex items-center justify-center transition-all duration-300 hover-lift">
+                  <span class="text-lg">📷</span>
+                </a>
+                <a href="#" class="w-10 h-10 bg-cyan-600 hover:bg-cyan-500 rounded-full flex items-center justify-center transition-all duration-300 hover-lift">
+                  <span class="text-lg">💼</span>
+                </a>
+              </div>
+              <a href="/contacto" class="inline-block w-full bg-white text-cyan-700 px-4 py-2 rounded-lg font-semibold text-center hover:bg-cyan-50 transition-all duration-300 hover-lift">
+                Agendar Cita
+              </a>
+            </div>
           </div>
         </div>
-        <div class="border-t border-cyan-600 mt-8 pt-8 text-center text-sm text-cyan-100">
-          &copy; {new Date().getFullYear()} <span class="font-bold text-white">Radhames<span class="font-bold text-black"> Capellan</span></span> Todos los derechos reservados. Lima, Perú.
+
+        <!-- Línea divisoria -->
+        <div class="border-t border-white/20 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-center md:text-left">
+              <p class="text-cyan-100 text-sm">
+                &copy; {new Date().getFullYear()} 
+                <span class="font-bold text-white">Radhames<span class="font-bold text-cyan-200"> Capellan</span></span> 
+                Todos los derechos reservados.
+              </p>
+            </div>
+            <div class="flex gap-6 text-sm">
+              <a href="/privacidad" class="text-cyan-100 hover:text-white transition-colors">Política de Privacidad</a>
+              <a href="/terminos" class="text-cyan-100 hover:text-white transition-colors">Términos de Servicio</a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
