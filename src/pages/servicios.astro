@@ -1,55 +1,84 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+// SEO específico para la página de servicios
+const seoProps = {
+  title: "Servicios Odontológicos Rehabident | Rehabilitación Oral, Implantes y Estética Dental",
+  description: "Servicios especializados en rehabilitación oral, implantes dentales, estética dental y ortodoncia en Rehabident. Tecnología avanzada y atención personalizada en Lima.",
+  keywords: "rehabilitación oral lima, implantes dentales lima, estética dental lima, ortodoncia lima, endodoncia lima, cirugía oral lima, odontopediatría lima",
+  url: "https://rehabident.pe/servicios",
+  type: "website"
+};
 ---
 
-<Layout>
+<Layout {...seoProps}>
   <div class="max-w-4xl mx-auto py-8 px-4">
-    <h1 class="text-3xl sm:text-4xl font-bold text-cyan-700 mb-6 sm:mb-8 text-center">Nuestros Servicios Odontológicos</h1>
+    <header class="text-center mb-8">
+      <h1 class="text-3xl sm:text-4xl font-bold text-cyan-700 mb-6 sm:mb-8">Servicios Odontológicos Especializados</h1>
+      <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+        En <strong>Rehabident</strong> ofrecemos servicios odontológicos integrales con tecnología de vanguardia 
+        y atención personalizada para cuidar tu salud bucal.
+      </p>
+    </header>
     
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-      <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover-lift">
+      <article class="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover-lift">
         <div class="text-3xl sm:text-4xl mb-3 sm:mb-4">🦷</div>
-        <h2 class="text-xl sm:text-2xl font-semibold text-cyan-700 mb-3 sm:mb-4">Odontología General</h2>
+        <h2 class="text-xl sm:text-2xl font-semibold text-cyan-700 mb-3 sm:mb-4">Rehabilitación Oral</h2>
         <ul class="space-y-2 text-gray-700 text-sm sm:text-base">
-          <li>• Exámenes bucales completos</li>
-          <li>• Limpieza dental profesional</li>
-          <li>• Tratamiento de caries</li>
-          <li>• Extracciones simples</li>
-          <li>• Sellantes dentales</li>
-          <li>• Educación en higiene bucal</li>
+          <li>• Prótesis fijas sobre dientes</li>
+          <li>• Prótesis fijas sobre implantes</li>
+          <li>• Prótesis removibles</li>
+          <li>• Prótesis híbridas</li>
+          <li>• Rehabilitación completa</li>
+          <li>• Diseño digital de sonrisa</li>
         </ul>
-        <p class="mt-4 text-sm text-gray-600">Mantenemos tu salud bucal con tratamientos preventivos y restauradores.</p>
-      </div>
+        <p class="mt-4 text-sm text-gray-600">Restauramos la función y estética de tu boca con materiales de alta calidad y tecnología avanzada.</p>
+      </article>
 
-      <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover-lift">
+      <article class="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover-lift">
+        <div class="text-3xl sm:text-4xl mb-3 sm:mb-4">🦷</div>
+        <h2 class="text-xl sm:text-2xl font-semibold text-cyan-700 mb-3 sm:mb-4">Implantes Dentales</h2>
+        <ul class="space-y-2 text-gray-700 text-sm sm:text-base">
+          <li>• Implantes unitarios</li>
+          <li>• Implantes múltiples</li>
+          <li>• Carga inmediata</li>
+          <li>• Cirugía guiada por computadora</li>
+          <li>• Regeneración ósea</li>
+          <li>• Elevación de seno maxilar</li>
+        </ul>
+        <p class="mt-4 text-sm text-gray-600">Implantes dentales con tecnología de vanguardia para reemplazar dientes perdidos de forma natural.</p>
+      </article>
+
+      <article class="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover-lift">
         <div class="text-3xl sm:text-4xl mb-3 sm:mb-4">😁</div>
         <h2 class="text-xl sm:text-2xl font-semibold text-cyan-700 mb-3 sm:mb-4">Estética Dental</h2>
         <ul class="space-y-2 text-gray-700 text-sm sm:text-base">
-          <li>• Blanqueamiento dental</li>
           <li>• Carillas de porcelana</li>
+          <li>• Blanqueamiento dental</li>
           <li>• Resinas estéticas</li>
-          <li>• Diseño de sonrisa</li>
-          <li>• Ortodoncia estética</li>
+          <li>• Diseño de sonrisa digital</li>
           <li>• Contorneado dental</li>
+          <li>• Gingivectomía estética</li>
         </ul>
-        <p class="mt-4 text-sm text-gray-600">Transformamos tu sonrisa con técnicas modernas y materiales de alta calidad.</p>
-      </div>
+        <p class="mt-4 text-sm text-gray-600">Transformamos tu sonrisa con técnicas modernas y materiales de alta calidad para resultados naturales.</p>
+      </article>
 
-      <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover-lift">
+      <article class="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover-lift">
         <div class="text-3xl sm:text-4xl mb-3 sm:mb-4">🦷</div>
         <h2 class="text-xl sm:text-2xl font-semibold text-cyan-700 mb-3 sm:mb-4">Ortodoncia</h2>
         <ul class="space-y-2 text-gray-700 text-sm sm:text-base">
           <li>• Brackets metálicos</li>
           <li>• Brackets estéticos</li>
           <li>• Alineadores invisibles</li>
-          <li>• Retenedores</li>
+          <li>• Ortodoncia lingual</li>
           <li>• Ortodoncia para adultos</li>
           <li>• Ortodoncia interceptiva</li>
         </ul>
-        <p class="mt-4 text-sm text-gray-600">Enderezamos tus dientes con los métodos más avanzados y cómodos.</p>
-      </div>
+        <p class="mt-4 text-sm text-gray-600">Enderezamos tus dientes con los métodos más avanzados y cómodos para una sonrisa perfecta.</p>
+      </article>
 
-      <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover-lift">
+      <article class="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover-lift">
         <div class="text-3xl sm:text-4xl mb-3 sm:mb-4">🦷</div>
         <h2 class="text-xl sm:text-2xl font-semibold text-cyan-700 mb-3 sm:mb-4">Endodoncia</h2>
         <ul class="space-y-2 text-gray-700 text-sm sm:text-base">
@@ -60,37 +89,50 @@ import Layout from '../layouts/Layout.astro';
           <li>• Tratamiento de abscesos</li>
           <li>• Preservación dental</li>
         </ul>
-        <p class="mt-4 text-sm text-gray-600">Salvamos dientes que antes se perdían con técnicas microendodónticas.</p>
-      </div>
+        <p class="mt-4 text-sm text-gray-600">Salvamos dientes que antes se perdían con técnicas microendodónticas y microscopio operatorio.</p>
+      </article>
 
-      <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover-lift">
+      <article class="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover-lift">
         <div class="text-3xl sm:text-4xl mb-3 sm:mb-4">🦷</div>
         <h2 class="text-xl sm:text-2xl font-semibold text-cyan-700 mb-3 sm:mb-4">Cirugía Oral</h2>
         <ul class="space-y-2 text-gray-700 text-sm sm:text-base">
           <li>• Extracciones complejas</li>
           <li>• Extracción de muelas del juicio</li>
-          <li>• Implantes dentales</li>
+          <li>• Cirugía de implantes</li>
           <li>• Cirugía periodontal</li>
           <li>• Biopsias orales</li>
           <li>• Cirugía reconstructiva</li>
         </ul>
-        <p class="mt-4 text-sm text-gray-600">Procedimientos quirúrgicos con tecnología avanzada y máxima seguridad.</p>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover-lift">
-        <div class="text-3xl sm:text-4xl mb-3 sm:mb-4">🦷</div>
-        <h2 class="text-xl sm:text-2xl font-semibold text-cyan-700 mb-3 sm:mb-4">Odontopediatría</h2>
-        <ul class="space-y-2 text-gray-700 text-sm sm:text-base">
-          <li>• Atención dental infantil</li>
-          <li>• Sellantes preventivos</li>
-          <li>• Fluorización</li>
-          <li>• Tratamiento de caries</li>
-          <li>• Ortodoncia infantil</li>
-          <li>• Educación para padres</li>
-        </ul>
-        <p class="mt-4 text-sm text-gray-600">Cuidamos la salud bucal de los más pequeños con cariño y paciencia.</p>
-      </div>
+        <p class="mt-4 text-sm text-gray-600">Procedimientos quirúrgicos con tecnología avanzada y máxima seguridad para tu comodidad.</p>
+      </article>
     </div>
+
+    <!-- Sección de tecnología -->
+    <section class="mt-12 bg-cyan-50 rounded-xl p-6 sm:p-8">
+      <h2 class="text-2xl font-bold text-cyan-700 mb-6 text-center">Tecnología Avanzada</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="text-lg font-semibold text-cyan-700 mb-3">Equipos de Vanguardia</h3>
+          <ul class="space-y-2 text-gray-700 text-sm">
+            <li>• Escáner intraoral 3D</li>
+            <li>• Tomografía computarizada</li>
+            <li>• Microscopio operatorio</li>
+            <li>• Láser dental</li>
+            <li>• Radiografía digital</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-cyan-700 mb-3">Procedimientos Digitales</h3>
+          <ul class="space-y-2 text-gray-700 text-sm">
+            <li>• Diseño digital de sonrisa</li>
+            <li>• Cirugía guiada por computadora</li>
+            <li>• Planificación 3D de implantes</li>
+            <li>• Ortodoncia digital</li>
+            <li>• Análisis facial digital</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
     <div class="mt-8 sm:mt-12 text-center">
       <a href="/contacto" class="inline-block bg-cyan-700 text-white px-6 sm:px-8 py-3 rounded-lg font-semibold shadow-lg hover:bg-cyan-800 transition hover-lift">

@@ -1,20 +1,174 @@
 ---
-// Layout base para el consultorio odontológico
+// Layout base para el consultorio odontológico Rehabident
 import '../styles/global.css';
+
+// Props para SEO dinámico
+export interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+  url?: string;
+  type?: string;
+}
+
+const {
+  title = "Rehabident - Consultorio Odontológico en Lima, Perú | Especialistas en Rehabilitación Oral",
+  description = "Rehabident: Consultorio odontológico especializado en rehabilitación oral, implantes dentales, estética dental y ortodoncia en Lima, Perú. Tecnología avanzada y atención personalizada.",
+  keywords = "odontólogo lima, rehabilitación oral, implantes dentales, estética dental, ortodoncia, endodoncia, cirugía oral, odontopediatría, consultorio dental lima, dentista miraflores",
+  image = "/og-image.jpg",
+  url = "https://rehabident.pe",
+  type = "website"
+} = Astro.props;
 ---
 <html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Rehabident" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={url} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:site_name" content="Rehabident" />
+    <meta property="og:locale" content="es_PE" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+    
+    <!-- Favicon y App Icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Rehabident - Consultorio Odontológico</title>
-    <meta name="description" content="Consultorio odontológico en Lima con atención personalizada, tecnología avanzada y precios justos. Especialistas en estética dental, ortodoncia y odontología general." />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- Preconnect para performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      "name": "Rehabident",
+      "description": "Consultorio odontológico especializado en rehabilitación oral, implantes dentales y estética dental en Lima, Perú",
+      "url": "https://rehabident.pe",
+      "logo": "https://rehabident.pe/logo.png",
+      "image": "https://rehabident.pe/og-image.jpg",
+      "telephone": "+51-1-234-5678",
+      "email": "contacto@rehabident.pe",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Arequipa 1234",
+        "addressLocality": "Miraflores",
+        "addressRegion": "Lima",
+        "addressCountry": "PE",
+        "postalCode": "15074"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -12.0464,
+        "longitude": -77.0428
+      },
+      "openingHours": [
+        "Mo-Fr 08:00-20:00",
+        "Sa 08:00-18:00",
+        "Su 09:00-14:00"
+      ],
+      "priceRange": "$$",
+      "paymentAccepted": ["Cash", "Credit Card", "Debit Card"],
+      "currenciesAccepted": "PEN",
+      "medicalSpecialty": ["Dentistry", "Oral Surgery", "Orthodontics"],
+      "availableService": [
+        {
+          "@type": "MedicalProcedure",
+          "name": "Implantes Dentales"
+        },
+        {
+          "@type": "MedicalProcedure", 
+          "name": "Ortodoncia"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Estética Dental"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/rehabident",
+        "https://www.instagram.com/rehabident",
+        "https://www.linkedin.com/company/rehabident"
+      ]
+    }
+    </script>
+    
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Rehabident",
+      "description": "Consultorio odontológico en Lima especializado en rehabilitación oral",
+      "url": "https://rehabident.pe",
+      "telephone": "+51-1-234-5678",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Arequipa 1234",
+        "addressLocality": "Miraflores", 
+        "addressRegion": "Lima",
+        "addressCountry": "PE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -12.0464,
+        "longitude": -77.0428
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "09:00",
+          "closes": "14:00"
+        }
+      ]
+    }
+    </script>
   </head>
   <body class="bg-gradient-to-br from-blue-50 to-cyan-100 min-h-screen text-gray-800 font-sans">
     <header class="bg-white/80 backdrop-blur shadow-md sticky top-0 z-50 animate-slide-in-top">
       <nav class="container mx-auto flex items-center justify-between py-4 px-4">
         <div class="flex items-center gap-2">
-          <img src="/favicon.svg" alt="Logo" class="w-8 h-8" />
+          <img src="/favicon.svg" alt="Logo Rehabident" class="w-8 h-8" />
           <span class="text-lg sm:text-xl font-bold text-cyan-700">Rehabident</span>
         </div>
         
@@ -28,7 +182,7 @@ import '../styles/global.css';
         </ul>
         
         <!-- Botón menú móvil -->
-        <button id="mobile-menu-btn" class="lg:hidden text-cyan-700 hover:text-cyan-800 focus-ring p-2 rounded-lg hover:bg-white/50 transition-all duration-300">
+        <button id="mobile-menu-btn" class="lg:hidden text-cyan-700 hover:text-cyan-800 focus-ring p-2 rounded-lg hover:bg-white/50 transition-all duration-300" aria-label="Abrir menú de navegación">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -45,10 +199,10 @@ import '../styles/global.css';
         <!-- Header del menú móvil -->
         <div class="flex items-center justify-between p-6 border-b border-white/10">
           <div class="flex items-center gap-2">
-            <img src="/favicon.svg" alt="Logo" class="w-8 h-8" />
+            <img src="/rehabident_logo.png" alt="Logo Rehabident" class="w-8 h-8" />
             <span class="text-xl font-bold text-cyan-700">Rehabident</span>
           </div>
-          <button id="mobile-close-btn" class="text-cyan-700 hover:text-cyan-800 focus-ring p-2 rounded-full hover:bg-white/20 transition-all duration-300">
+          <button id="mobile-close-btn" class="text-cyan-700 hover:text-cyan-800 focus-ring p-2 rounded-full hover:bg-white/20 transition-all duration-300" aria-label="Cerrar menú de navegación">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
@@ -113,24 +267,24 @@ import '../styles/global.css';
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <h3 class="text-lg font-semibold mb-4">Rehabident</h3>
-            <p class="text-sm text-cyan-100">Tu sonrisa, nuestra pasión. Consultorio odontológico comprometido con tu salud bucal.</p>
+            <p class="text-sm text-cyan-100">Tu sonrisa, nuestra pasión. Consultorio odontológico especializado en rehabilitación oral comprometido con tu salud bucal.</p>
           </div>
           <div>
             <h4 class="font-semibold mb-4">Servicios</h4>
             <ul class="text-sm text-cyan-100 space-y-2">
-              <li><a href="/servicios" class="hover:text-white transition">Odontología General</a></li>
+              <li><a href="/servicios" class="hover:text-white transition">Rehabilitación Oral</a></li>
+              <li><a href="/servicios" class="hover:text-white transition">Implantes Dentales</a></li>
               <li><a href="/servicios" class="hover:text-white transition">Estética Dental</a></li>
               <li><a href="/servicios" class="hover:text-white transition">Ortodoncia</a></li>
-              <li><a href="/servicios" class="hover:text-white transition">Endodoncia</a></li>
             </ul>
           </div>
           <div>
             <h4 class="font-semibold mb-4">Contacto</h4>
             <ul class="text-sm text-cyan-100 space-y-2">
-              <li>Av. Campoy 1399, San Juan de Lurigancho</li>
+              <li>Av. Arequipa 1234, Miraflores</li>
               <li>Lima, Perú</li>
-              <li>Tel: +54 988 552 202</li>
-              <li>Email: contacto@Rehabident.pe</li>
+              <li>Tel: (01) 234-5678</li>
+              <li>Email: contacto@rehabident.pe</li>
             </ul>
           </div>
           <div>
@@ -144,7 +298,7 @@ import '../styles/global.css';
           </div>
         </div>
         <div class="border-t border-cyan-600 mt-8 pt-8 text-center text-sm text-cyan-100">
-          &copy; {new Date().getFullYear()} Radhames Capellan. Todos los derechos reservados. Lima, Perú.
+          &copy; {new Date().getFullYear()} Rehabident. Todos los derechos reservados. Lima, Perú.
         </div>
       </div>
     </footer>
