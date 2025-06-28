@@ -3,39 +3,39 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <div class="max-w-6xl mx-auto py-8">
-    <h1 class="text-4xl font-bold text-cyan-700 mb-8 text-center">Contáctanos</h1>
+  <div class="max-w-6xl mx-auto py-8 px-4">
+    <h1 class="text-3xl sm:text-4xl font-bold text-cyan-700 mb-6 sm:mb-8 text-center scroll-reveal">Contáctanos</h1>
     
-    <div class="grid md:grid-cols-2 gap-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
       <!-- Información de Contacto -->
       <div>
-        <h2 class="text-2xl font-semibold text-cyan-700 mb-6">Información de Contacto</h2>
+        <h2 class="text-xl sm:text-2xl font-semibold text-cyan-700 mb-4 sm:mb-6 scroll-reveal">Información de Contacto</h2>
         
-        <div class="space-y-6">
-          <div class="bg-white rounded-xl shadow-lg p-6">
-            <h3 class="text-lg font-semibold text-cyan-700 mb-3">📍 Ubicación</h3>
-            <p class="text-gray-700">Av. Arequipa 1234, Miraflores</p>
-            <p class="text-gray-700">Lima, Perú</p>
+        <div class="space-y-4 sm:space-y-6">
+          <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover-lift scroll-reveal">
+            <h3 class="text-base sm:text-lg font-semibold text-cyan-700 mb-2 sm:mb-3">📍 Ubicación</h3>
+            <p class="text-gray-700 text-sm sm:text-base">Av. Arequipa 1234, Miraflores</p>
+            <p class="text-gray-700 text-sm sm:text-base">Lima, Perú</p>
             <p class="text-sm text-gray-600 mt-2">A 2 cuadras del Parque Kennedy</p>
           </div>
 
-          <div class="bg-white rounded-xl shadow-lg p-6">
-            <h3 class="text-lg font-semibold text-cyan-700 mb-3">📞 Teléfonos</h3>
-            <p class="text-gray-700">Recepción: (01) 234-5678</p>
-            <p class="text-gray-700">WhatsApp: +51 999-888-777</p>
-            <p class="text-gray-700">Emergencias: +51 999-777-666</p>
+          <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover-lift scroll-reveal">
+            <h3 class="text-base sm:text-lg font-semibold text-cyan-700 mb-2 sm:mb-3">📞 Teléfonos</h3>
+            <p class="text-gray-700 text-sm sm:text-base">Recepción: (01) 234-5678</p>
+            <p class="text-gray-700 text-sm sm:text-base">WhatsApp: +51 999-888-777</p>
+            <p class="text-gray-700 text-sm sm:text-base">Emergencias: +51 999-777-666</p>
           </div>
 
-          <div class="bg-white rounded-xl shadow-lg p-6">
-            <h3 class="text-lg font-semibold text-cyan-700 mb-3">✉️ Email</h3>
-            <p class="text-gray-700">contacto@odontolima.pe</p>
-            <p class="text-gray-700">citas@odontolima.pe</p>
-            <p class="text-gray-700">emergencias@odontolima.pe</p>
+          <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover-lift scroll-reveal">
+            <h3 class="text-base sm:text-lg font-semibold text-cyan-700 mb-2 sm:mb-3">✉️ Email</h3>
+            <p class="text-gray-700 text-sm sm:text-base">contacto@odontolima.pe</p>
+            <p class="text-gray-700 text-sm sm:text-base">citas@odontolima.pe</p>
+            <p class="text-gray-700 text-sm sm:text-base">emergencias@odontolima.pe</p>
           </div>
 
-          <div class="bg-white rounded-xl shadow-lg p-6">
-            <h3 class="text-lg font-semibold text-cyan-700 mb-3">🕒 Horarios de Atención</h3>
-            <div class="space-y-2 text-gray-700">
+          <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover-lift scroll-reveal">
+            <h3 class="text-base sm:text-lg font-semibold text-cyan-700 mb-2 sm:mb-3">🕒 Horarios de Atención</h3>
+            <div class="space-y-2 text-gray-700 text-sm sm:text-base">
               <p><strong>Lunes a Viernes:</strong> 8:00 AM - 8:00 PM</p>
               <p><strong>Sábados:</strong> 8:00 AM - 6:00 PM</p>
               <p><strong>Domingos:</strong> 9:00 AM - 2:00 PM</p>
@@ -47,65 +47,65 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Formulario de Contacto -->
       <div>
-        <h2 class="text-2xl font-semibold text-cyan-700 mb-6">Solicita tu Cita</h2>
+        <h2 class="text-xl sm:text-2xl font-semibold text-cyan-700 mb-4 sm:mb-6 scroll-reveal">Solicita tu Cita</h2>
         
-        <form class="bg-white rounded-xl shadow-lg p-8 space-y-6">
-          <div class="grid md:grid-cols-2 gap-4">
-            <div>
+        <form class="bg-white rounded-xl shadow-lg p-4 sm:p-6 lg:p-8 space-y-4 sm:space-y-6 hover-lift scroll-reveal">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="relative">
               <label for="nombre" class="block text-sm font-medium text-gray-700 mb-2">Nombre *</label>
               <input 
                 type="text" 
                 id="nombre" 
                 name="nombre" 
                 required 
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent focus-ring transition-all duration-300 text-sm sm:text-base"
                 placeholder="Tu nombre completo"
               />
             </div>
-            <div>
+            <div class="relative">
               <label for="apellido" class="block text-sm font-medium text-gray-700 mb-2">Apellido *</label>
               <input 
                 type="text" 
                 id="apellido" 
                 name="apellido" 
                 required 
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent focus-ring transition-all duration-300 text-sm sm:text-base"
                 placeholder="Tu apellido"
               />
             </div>
           </div>
 
-          <div class="grid md:grid-cols-2 gap-4">
-            <div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="relative">
               <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
               <input 
                 type="email" 
                 id="email" 
                 name="email" 
                 required 
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent focus-ring transition-all duration-300 text-sm sm:text-base"
                 placeholder="tu@email.com"
               />
             </div>
-            <div>
+            <div class="relative">
               <label for="telefono" class="block text-sm font-medium text-gray-700 mb-2">Teléfono *</label>
               <input 
                 type="tel" 
                 id="telefono" 
                 name="telefono" 
                 required 
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent focus-ring transition-all duration-300 text-sm sm:text-base"
                 placeholder="+51 999 888 777"
               />
             </div>
           </div>
 
-          <div>
+          <div class="relative">
             <label for="servicio" class="block text-sm font-medium text-gray-700 mb-2">Servicio de Interés</label>
             <select 
               id="servicio" 
               name="servicio" 
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+              class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent focus-ring transition-all duration-300 text-sm sm:text-base"
             >
               <option value="">Selecciona un servicio</option>
               <option value="consulta-general">Consulta General</option>
@@ -119,65 +119,69 @@ import Layout from '../layouts/Layout.astro';
             </select>
           </div>
 
-          <div>
+          <div class="relative">
             <label for="fecha" class="block text-sm font-medium text-gray-700 mb-2">Fecha Preferida</label>
             <input 
               type="date" 
               id="fecha" 
               name="fecha" 
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+              class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent focus-ring transition-all duration-300 text-sm sm:text-base"
             />
           </div>
 
-          <div>
+          <div class="relative">
             <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-2">Mensaje</label>
             <textarea 
               id="mensaje" 
               name="mensaje" 
               rows="4" 
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+              class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent focus-ring transition-all duration-300 resize-none text-sm sm:text-base"
               placeholder="Describe brevemente tu consulta o motivo de la cita..."
             ></textarea>
           </div>
 
           <button 
             type="submit" 
-            class="w-full bg-cyan-700 text-white py-3 px-6 rounded-lg font-semibold shadow-lg hover:bg-cyan-800 transition duration-300"
+            class="w-full bg-cyan-700 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg font-semibold shadow-lg hover:bg-cyan-800 transition duration-300 hover-lift hover-glow focus-ring text-sm sm:text-base"
           >
-            Solicitar Cita
+            <span class="submit-text">Solicitar Cita</span>
+            <span class="submit-loading hidden">
+              <span class="spinner inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full mr-2"></span>
+              Enviando...
+            </span>
           </button>
         </form>
       </div>
     </div>
 
     <!-- Mapa -->
-    <div class="mt-12">
-      <h2 class="text-2xl font-semibold text-cyan-700 mb-6 text-center">Nuestra Ubicación</h2>
-      <div class="bg-white rounded-xl shadow-lg p-6">
-        <div class="aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
-          <p class="text-gray-600">Mapa interactivo de Google Maps</p>
-          <p class="text-sm text-gray-500">Av. Arequipa 1234, Miraflores, Lima, Perú</p>
+    <div class="mt-8 sm:mt-12">
+      <h2 class="text-xl sm:text-2xl font-semibold text-cyan-700 mb-4 sm:mb-6 text-center scroll-reveal">Nuestra Ubicación</h2>
+      <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 hover-lift scroll-reveal">
+        <div class="aspect-video bg-gray-200 rounded-lg flex flex-col items-center justify-center p-4">
+          <p class="text-gray-600 text-sm sm:text-base mb-2">Mapa interactivo de Google Maps</p>
+          <p class="text-sm text-gray-500 text-center">Av. Arequipa 1234, Miraflores, Lima, Perú</p>
         </div>
       </div>
     </div>
 
     <!-- Información Adicional -->
-    <div class="mt-12 grid md:grid-cols-3 gap-6">
-      <div class="bg-cyan-50 rounded-xl p-6 text-center">
-        <div class="text-3xl mb-3">🚗</div>
-        <h3 class="text-lg font-semibold text-cyan-700 mb-2">Estacionamiento</h3>
+    <div class="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+      <div class="bg-cyan-50 rounded-xl p-4 sm:p-6 text-center hover-lift scroll-reveal">
+        <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">🚗</div>
+        <h3 class="text-base sm:text-lg font-semibold text-cyan-700 mb-2">Estacionamiento</h3>
         <p class="text-gray-600 text-sm">Estacionamiento gratuito disponible para nuestros pacientes</p>
       </div>
       
-      <div class="bg-cyan-50 rounded-xl p-6 text-center">
-        <div class="text-3xl mb-3">♿</div>
-        <h3 class="text-lg font-semibold text-cyan-700 mb-2">Accesibilidad</h3>
+      <div class="bg-cyan-50 rounded-xl p-4 sm:p-6 text-center hover-lift scroll-reveal">
+        <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">♿</div>
+        <h3 class="text-base sm:text-lg font-semibold text-cyan-700 mb-2">Accesibilidad</h3>
         <p class="text-gray-600 text-sm">Instalaciones completamente accesibles para personas con movilidad reducida</p>
       </div>
       
-      <div class="bg-cyan-50 rounded-xl p-6 text-center">
-        <div class="text-3xl mb-3">🅿️</div>
-        <h3 class="text-lg font-semibold text-cyan-700 mb-2">Transporte Público</h3>
+      <div class="bg-cyan-50 rounded-xl p-4 sm:p-6 text-center hover-lift scroll-reveal sm:col-span-2 lg:col-span-1">
+        <div class="text-2xl sm:text-3xl mb-2 sm:mb-3">🅿️</div>
+        <h3 class="text-base sm:text-lg font-semibold text-cyan-700 mb-2">Transporte Público</h3>
         <p class="text-gray-600 text-sm">Fácil acceso por Metropolitano y múltiples líneas de transporte público</p>
       </div>
     </div>

@@ -5,40 +5,55 @@ import '../styles/global.css';
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>OdontoLima - Consultorio Odontológico en Lima, Perú</title>
     <meta name="description" content="Consultorio odontológico en Lima con atención personalizada, tecnología avanzada y precios justos. Especialistas en estética dental, ortodoncia y odontología general." />
   </head>
   <body class="bg-gradient-to-br from-blue-50 to-cyan-100 min-h-screen text-gray-800 font-sans">
-    <header class="bg-white/80 backdrop-blur shadow-md sticky top-0 z-50">
+    <header class="bg-white/80 backdrop-blur shadow-md sticky top-0 z-50 animate-slide-in-top">
       <nav class="container mx-auto flex items-center justify-between py-4 px-4">
         <div class="flex items-center gap-2">
           <img src="/favicon.svg" alt="Logo" class="w-8 h-8" />
-          <span class="text-xl font-bold text-cyan-700">OdontoLima</span>
+          <span class="text-lg sm:text-xl font-bold text-cyan-700">OdontoLima</span>
         </div>
-        <ul class="hidden md:flex gap-6 text-base font-medium">
-          <li><a href="/" class="hover:text-cyan-700 transition">Inicio</a></li>
-          <li><a href="/nosotros" class="hover:text-cyan-700 transition">Nosotros</a></li>
-          <li><a href="/servicios" class="hover:text-cyan-700 transition">Servicios</a></li>
-          <li><a href="/equipo" class="hover:text-cyan-700 transition">Equipo</a></li>
-          <li><a href="/contacto" class="hover:text-cyan-700 transition">Contacto</a></li>
+        
+        <!-- Menú de escritorio -->
+        <ul class="hidden lg:flex gap-6 text-base font-medium">
+          <li><a href="/" class="hover:text-cyan-700 transition hover-lift">Inicio</a></li>
+          <li><a href="/nosotros" class="hover:text-cyan-700 transition hover-lift">Nosotros</a></li>
+          <li><a href="/servicios" class="hover:text-cyan-700 transition hover-lift">Servicios</a></li>
+          <li><a href="/equipo" class="hover:text-cyan-700 transition hover-lift">Equipo</a></li>
+          <li><a href="/contacto" class="hover:text-cyan-700 transition hover-lift">Contacto</a></li>
         </ul>
-        <div class="md:hidden">
-          <button class="text-cyan-700 hover:text-cyan-800">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
+        
+        <!-- Botón menú móvil -->
+        <button id="mobile-menu-btn" class="lg:hidden text-cyan-700 hover:text-cyan-800 focus-ring p-2">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </nav>
+      
+      <!-- Menú móvil -->
+      <div id="mobile-menu" class="lg:hidden hidden bg-white/95 backdrop-blur border-t border-gray-200">
+        <ul class="container mx-auto py-4 px-4 space-y-3">
+          <li><a href="/" class="block py-2 text-base font-medium hover:text-cyan-700 transition">Inicio</a></li>
+          <li><a href="/nosotros" class="block py-2 text-base font-medium hover:text-cyan-700 transition">Nosotros</a></li>
+          <li><a href="/servicios" class="block py-2 text-base font-medium hover:text-cyan-700 transition">Servicios</a></li>
+          <li><a href="/equipo" class="block py-2 text-base font-medium hover:text-cyan-700 transition">Equipo</a></li>
+          <li><a href="/contacto" class="block py-2 text-base font-medium hover:text-cyan-700 transition">Contacto</a></li>
+        </ul>
+      </div>
     </header>
+    
     <main>
       <slot />
     </main>
+    
     <footer class="bg-cyan-700 text-white py-8 mt-12">
       <div class="container mx-auto px-4">
-        <div class="grid md:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <h3 class="text-lg font-semibold mb-4">OdontoLima</h3>
             <p class="text-sm text-cyan-100">Tu sonrisa, nuestra pasión. Consultorio odontológico comprometido con tu salud bucal.</p>
@@ -46,10 +61,10 @@ import '../styles/global.css';
           <div>
             <h4 class="font-semibold mb-4">Servicios</h4>
             <ul class="text-sm text-cyan-100 space-y-2">
-              <li><a href="/servicios" class="hover:text-white">Odontología General</a></li>
-              <li><a href="/servicios" class="hover:text-white">Estética Dental</a></li>
-              <li><a href="/servicios" class="hover:text-white">Ortodoncia</a></li>
-              <li><a href="/servicios" class="hover:text-white">Endodoncia</a></li>
+              <li><a href="/servicios" class="hover:text-white transition">Odontología General</a></li>
+              <li><a href="/servicios" class="hover:text-white transition">Estética Dental</a></li>
+              <li><a href="/servicios" class="hover:text-white transition">Ortodoncia</a></li>
+              <li><a href="/servicios" class="hover:text-white transition">Endodoncia</a></li>
             </ul>
           </div>
           <div>
@@ -76,5 +91,7 @@ import '../styles/global.css';
         </div>
       </div>
     </footer>
+    
+    <script src="../scripts/main.js"></script>
   </body>
 </html> 
